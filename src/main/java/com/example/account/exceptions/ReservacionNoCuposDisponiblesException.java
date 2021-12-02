@@ -1,4 +1,4 @@
-package exceptions;
+package com.example.account.exceptions;
 
 
 public class ReservacionNoCuposDisponiblesException extends RuntimeException {

@@ -1,10 +1,10 @@
-package controllers;
-import exceptions.AccountNotFoundException;
-import exceptions.ReservacionNoCuposDisponiblesException;
-import models.account;
-import models.reservacion;
-import repositories.accountRepository;
-import repositories.reservacionRepository;
+package com.example.account.controllers;
+import com.example.account.exceptions.AccountNotFoundException;
+import com.example.account.exceptions.ReservacionNoCuposDisponiblesException;
+import com.example.account.models.account;
+import com.example.account.models.reservacion;
+import com.example.account.repositories.accountRepository;
+import com.example.account.repositories.reservacionRepository;
 import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
@@ -41,7 +41,7 @@ public class ReservacionController {
         reserva.setDate(new Date());
         return transactionRepository.save(reserva);
     }
-    @GetMapping("/reservacion/{username}")
+    @GetMapping("/reservas/{username}")
     List<reservacion> userTransaction(@PathVariable String username){
         account userAccount = accountRepository.findById(username).orElse(null);
         if (userAccount == null)

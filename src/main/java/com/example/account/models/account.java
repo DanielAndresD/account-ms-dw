@@ -1,4 +1,4 @@
-package models;
+package com.example.account.models;
 
 import org.springframework.data.annotation.Id;
 
